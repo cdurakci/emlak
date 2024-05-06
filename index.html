@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortization Calculator</title>
+</head>
+ <script>
+        function calculate() {
+		document.getElementById("result").innerHTML = null;
+            aylik_faiz = 1.043;
+            yillik_faiz = 1.55;
+            tufe = 1.59;
+			aylik_stopaj = 0.075;
+            yillik_stopaj = 0.025;
+
+            kira = parseFloat(document.getElementById("kira").value);
+            fiyat = parseFloat(document.getElementById("fiyat").value);
+
+            let toplam = 0;
+            let biriken = 0;
+
+            for (let i = 0; i < 3; i++) {
+                if (i == 0) {
+                    toplam = 0;
+                } else {
+                    toplam += toplam * (yillik_faiz - 1) * (1 - yillik_stopaj);
+                    kira = kira * tufe;
+                }
+                biriken = toplam;
+
+                let temp = 0;
+                for (let j = 1; j <= 12; j++) {
+                    temp += kira + (kira * (Math.pow(aylik_faiz, j) - 1) * (1 - aylik_stopaj));
+                }
+                toplam += temp;
+				document.getElementById("result").innerHTML += `<p>${i + 1}. Year Accumulated: ${Math.round(biriken).toLocaleString()} - Rental Income: ${Math.round(temp).toLocaleString()} - Total Accumulated: ${Math.round(toplam).toLocaleString()} - Amortization Rate: ${((toplam / fiyat) * 100).toFixed(2)}%</p>`;           
+				
+
+				}
+
+		}
+    </script>
+	
+<body onload="calculate();">
+    <h1>Property Amortization Calculator</h1>
+	Aylik Faiz: 4.5 %<br>
+	Yillik faiz: 55%<br>
+    Tufe: 59 %<br>
+    Aylik Stopaj: 7.5%<br>
+    Yillik Stopaj: 2.5%<br>
+	<p>
+    <form id="calculator-form">
+        <label for="kira">Monthly Rent (kira):</label>
+        <input type="number" id="kira" name="kira" value="24000" step="1000"><br>
+
+        <label for="fiyat">Property Price (fiyat):</label>
+        <input type="number" id="fiyat" name="fiyat" value="2750000" step="10000"><br>
+
+        <button type="button" onclick="calculate()">Calculate</button>
+		<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button>
+    </form>
+
+    <div id="result"></div>
+
+   
+</body>
+©2024 Can Janoshowsky
+</html>
