@@ -34,8 +34,12 @@
                     temp += kira + (kira * (Math.pow(aylik_faiz, j) - 1) * (1 - aylik_stopaj));
                 }
                 toplam += temp;
+		    if(i==3){
+		document.getElementById("result").innerHTML += `<p>${i + 1}. Year Accumulated: ${Math.round(biriken).toLocaleString()} - Rental Income: ${Math.round(temp).toLocaleString()} - Total Accumulated: ${Math.round(toplam).toLocaleString()} - <mark>Amortization Rate: ${((toplam / fiyat) * 100).toFixed(2)}%</mark></p>`;           
+
+		    } else {
 				document.getElementById("result").innerHTML += `<p>${i + 1}. Year Accumulated: ${Math.round(biriken).toLocaleString()} - Rental Income: ${Math.round(temp).toLocaleString()} - Total Accumulated: ${Math.round(toplam).toLocaleString()} - Amortization Rate: ${((toplam / fiyat) * 100).toFixed(2)}%</p>`;           
-				
+		    }
 
 				}
 
