@@ -8,9 +8,9 @@
  <script>
         function calculate() {
 		document.getElementById("result").innerHTML = null;
-            aylik_faiz = 1.0429;
+            aylik_faiz = 1.0405;
             yillik_faiz = 1.55;
-            tufe = 1.649;
+            tufe = 1.6347;
 		aylik_stopaj = 0.075;
             yillik_stopaj = 0.025;
 
@@ -47,21 +47,21 @@
     </script>
 	
 <body onload="calculate();">
-    <h1>Property Amortization Calculator</h1>
-	Aylik Faiz: 4.29 %<br>
+    <h1>Gayrimenkul Amortisman Hesaplayıcı</h1>
+	Aylik Faiz: 4.05 %<br>
 	Yillik faiz: 55%<br>
-    Tufe: 64.9 %<br>
+    Tufe: 63.47 %<br>
     Aylik Stopaj: 7.5%<br>
     Yillik Stopaj: 2.5%<br>
 	<p>
     <form id="calculator-form">
-        <label for="kira">Monthly Rent (kira):</label>
+        <label for="kira">Aylık Kira:</label>
         <input type="number" id="kira" name="kira" value="18500" step="1000"><br>
 
-        <label for="fiyat">Property Price (fiyat):</label>
+        <label for="fiyat">Satış Fiyatı:</label>
         <input type="number" id="fiyat" name="fiyat" value="3000000" step="10000"><br>
 
-        <button type="button" onclick="calculate()">Calculate</button>
+        <button type="button" onclick="calculate()">Hesapla</button>
 		<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button>
     </form>
 
