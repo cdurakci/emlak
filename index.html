@@ -35,10 +35,10 @@
                 }
                 toplam += temp;
 		    if(i==2){
-		document.getElementById("result").innerHTML += `<p>${i + 1}. Year Accumulated: ${Math.round(biriken).toLocaleString()} - Rental Income: ${Math.round(temp).toLocaleString()} - Total Accumulated: ${Math.round(toplam).toLocaleString()} - <mark>Amortisman Oranı: ${((toplam / fiyat) * 100).toFixed(2)}%</mark></p>`;           
+		document.getElementById("result").innerHTML += `<p>${i + 1}. Yıl Devreden: ${Math.round(biriken).toLocaleString()} - Kira Geliri: ${Math.round(temp).toLocaleString()} - Toplam Devreden: ${Math.round(toplam).toLocaleString()} - <mark>Amortisman Oranı: ${((toplam / fiyat) * 100).toFixed(2)}%</mark></p>`;           
 
 		    } else {
-				document.getElementById("result").innerHTML += `<p>${i + 1}. Year Accumulated: ${Math.round(biriken).toLocaleString()} - Rental Income: ${Math.round(temp).toLocaleString()} - Total Accumulated: ${Math.round(toplam).toLocaleString()} - Amortisman Oranı: ${((toplam / fiyat) * 100).toFixed(2)}%</p>`;           
+				document.getElementById("result").innerHTML += `<p>${i + 1}. Yıl Devreden: ${Math.round(biriken).toLocaleString()} - Kira Geliri: ${Math.round(temp).toLocaleString()} - Toplam Devreden: ${Math.round(toplam).toLocaleString()} - Amortisman Oranı: ${((toplam / fiyat) * 100).toFixed(2)}%</p>`;           
 		    }
 
 				}
