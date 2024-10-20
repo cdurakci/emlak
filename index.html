@@ -74,7 +74,7 @@ body {
 </table>
 
 	<p>
-    <form id="calculator-form">
+      <form id="calculator-form">
     <table>
     <tr>
     <td>
@@ -88,9 +88,9 @@ body {
      <td> <label for="fiyat">Satış Fiyatı:</label></td>
      <td> <input type="number" id="fiyat" name="fiyat" value="3250000" step="10000"></td>
     </tr>
+    <tr><td> </td><td><button type="button" onclick="calculate()">Hesapla</button>
+<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button></td></tr>
     </table>
-<button type="button" onclick="calculate()">Hesapla</button>
-<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button>
     </form>
 
     <div id="result"></div>
