@@ -75,14 +75,22 @@ body {
 
 	<p>
     <form id="calculator-form">
-        <label for="kira">Aylık Kira Getirisi:</label>
-        <input type="number" id="kira" name="kira" value="30000" step="1000"><br>
-
-        <label for="fiyat">Satış Fiyatı:</label>
-        <input type="number" id="fiyat" name="fiyat" value="3250000" step="10000"><br>
-
-        <button type="button" onclick="calculate()">Hesapla</button>
-		<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button>
+    <table>
+    <tr>
+    <td>
+    <label for="kira">Aylık Kira Getirisi:</label>
+    </td>
+     <td>
+     <input type="number" id="kira" name="kira" value="30000" step="1000">
+      </td>
+    </tr>
+    <tr>
+     <td> <label for="fiyat">Satış Fiyatı:</label></td>
+     <td> <input type="number" id="fiyat" name="fiyat" value="3250000" step="10000"></td>
+    </tr>
+    </table>
+<button type="button" onclick="calculate()">Hesapla</button>
+<button type="reset" onclick="document.getElementById('result').innerHTML = null;">Reset</button>
     </form>
 
     <div id="result"></div>
